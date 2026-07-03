@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/output.css">
+    <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  rel="stylesheet">
+</head>
+<body>
+    <header> 
+        <h1 class="text-red-700 text-5xl">Available Homes:</h1>
+        <h2>
+            <ul class="list-group list-group-horizontal-md">
+                <% registeredHomes.forEach(all=>{ %>
+                    <li class="list-group-item">
+                        <%= all.address%>
+                    </li>
+
+               <% }) %>
+            </ul>
+        </h2>
+    </header>
+    <main>
+        <a href="/host/home" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Add Home </a>
+    </main>
+    
+</body>
+</html>

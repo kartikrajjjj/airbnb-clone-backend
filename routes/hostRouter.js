@@ -10,9 +10,14 @@ hostRouter.get("/home",(req,res,next)=>{
 
 })
 
+const registeredHomes=[];
+
 hostRouter.post("/home",(req,res,next)=>{
+    console.log('Home Registration Successful for Address:',req.body.address);
+    registeredHomes.push({address: req.body.address});
     res.sendFile(path.join(__dirname,"../","views","homeadded.html"));
 
 })
 
-module.exports = hostRouter;
+exports.hostRouter = hostRouter;
+exports.registeredHomes = registeredHomes;

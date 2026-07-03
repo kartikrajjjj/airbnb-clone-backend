@@ -3,9 +3,10 @@ const path = require('path');
 const express = require('express');
 const userRouter = express.Router();
 
-const rootDir = require("../utils/pathUtil");
+const { registeredHomes } = require('./hostRouter');
 
 userRouter.get("/",(req,res,next)=>{
-        res.sendFile(path.join(__dirname,"../","views","all.html"));
+        console.log(registeredHomes);
+        res.render('all',{registeredHomes: registeredHomes});
 });
 module.exports= userRouter;
