@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Home</title>
     <%- include('partials/linkcss') %>
+    <link rel="stylesheet" href="/css/addhome.css">
 </head>
 <body>
     <header>
-        <h2 class="text-red-700 text-4xl">Register your home here:</h2>
     </header>
     <main style="margin: 10px">
+        <h2 class="text-black">Register your home here:</h2>
         <form action="/host/home" method="POST">
-        <input type="text" name="address" placeholder="Enter your address" class="form-control"/>
+        <input type="text" name="address" placeholder="Enter your address" class="form-control mb-3"/>
+        <input type="text" name="price" placeholder="Price/day (INR)" class="form-control mb-3"/>
+        <input type="text" id="photos" name="photo" class="form-control mb-3" placeholder="image-url"/>
         <input type="submit" class="btn btn-success"/>
         </form>
         <a href="/" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Go to home</a>

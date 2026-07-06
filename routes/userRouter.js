@@ -3,9 +3,7 @@ const path = require('path');
 const express = require('express');
 const userRouter = express.Router();
 
-const { registeredHomes } = require('./hostRouter');
+const { goHome } = require('../controllers/homes');
 
-userRouter.get("/",(req,res,next)=>{
-        res.render('all',{registeredHomes: registeredHomes});
-});
+userRouter.get("/",goHome);
 module.exports= userRouter;

@@ -6,25 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <%- include('partials/linkcss') %>
+    <link rel="stylesheet" href="/css/all.css">
 </head>
 
 <body>
     <header>
         <h1 class="text-red-700 text-5xl">Available Homes:</h1>
         <h2>
-            <ul class="list-group list-group-horizontal-md">
+            <div class="homes-container">
                 <% if(registeredHomes.length===0){ %>
 
                     No homes yet
 
                     <% } %>
                         <% registeredHomes.forEach(all=>{ %>
-                            <li class="list-group-item">
-                                <%= all.address%>
-                            </li>
+                            <div class="home-card">
+                                <img src="<%= all.photo %>" alt="Home">
+
+                                <h3>
+                                    <%= all.address %>
+                                </h3>
+
+                                <p>Price: ₹<%= all.price %>
+                                </p>
+                                
+                            </div>
 
                             <% }) %>
-            </ul>
+            </div>
         </h2>
     </header>
     <main>
