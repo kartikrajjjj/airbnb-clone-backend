@@ -6,7 +6,6 @@ const userRouter = express.Router();
 const { registeredHomes } = require('./hostRouter');
 
 userRouter.get("/",(req,res,next)=>{
-        console.log(registeredHomes);
         res.render('all',{registeredHomes: registeredHomes});
 });
 module.exports= userRouter;
