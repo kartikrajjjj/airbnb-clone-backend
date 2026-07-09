@@ -5,6 +5,7 @@ const path = require('path');
 const express = require('express');
 const userRouter = require('./routes/userRouter');
 const {hostRouter} = require('./routes/hostRouter');
+const errorsController=require('./controllers/errors');
 const app= express();
 
 app.set('view engine', 'ejs');
@@ -16,9 +17,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(userRouter);
 app.use("/host",hostRouter);
-app.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname,"views","404.html"));
-})
+app.use(errorsController.pageNotFound);
 
 const PORT=3000;
 app.listen(3000,()=>{
