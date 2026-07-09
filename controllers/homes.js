@@ -1,18 +1,18 @@
 const path = require('path');
-const registeredHomes=[];
+const Home= require("../models/home");
 exports.getAddHome = (req,res,next)=>{
-    res.render(path.join(__dirname,"../","views","addhome.ejs"));
+    res.render("addhome.ejs");
 }
 
 
 exports.postAddHome = (req,res,next)=>{
-    registeredHomes.push({
-    address: req.body.address,
-    price: req.body.price,
-    photo: req.body.photo
-    });
-    res.render(path.join(__dirname,"../","views","homeadded.ejs"));
+    const {address,price,photo}=req.body;
+    const home = new Home(address, price, photo);
+    home.save();
+    res.render("homeadded.ejs");
 }
 exports.goHome = (req,res,next)=>{
-        res.render('all',{registeredHomes: registeredHomes});
+    Home.fetchAll(registeredHomes=>{
+        res.render('all',{registeredHomes});
+    });
 };
