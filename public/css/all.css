@@ -18,8 +18,9 @@ header {
 
 .home-card {
     width: 200px;
+    height: 280px;
     background: white;
-    border: 1px solid #ddd;
+    border: solid black;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -32,7 +33,7 @@ header {
 
 .home-card img {
     width: 100%;
-    height: 130px;
+    height: 150px;
     object-fit: cover;
 }
 
@@ -55,4 +56,8 @@ main {
 main a {
     font-size: 18px;
     text-decoration: none;
+}
+#book{
+    margin: 15px;
+    border: solid black;
 }
