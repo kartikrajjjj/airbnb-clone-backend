@@ -1,5 +1,6 @@
-const path = require("path");
-
-exports.pageNotFound = (req,res,next)=>{
-    res.status(404).render(path.join(__dirname,"../views","404.ejs"));
-}
+exports.pageNotFound = (req, res, next) => {
+    res.status(404).render("404", {
+        pageTitle: "404 - Page Not Found",
+        currentPage: ""
+    });
+};
